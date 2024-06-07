@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import User, Transaction
 from web3 import Web3
 from eth_account import Account
-ganache_url = 'http://172.16.16.18:8545'
+ganache_url = 'http://127.0.0.1:8545'
 web3 = Web3(Web3.HTTPProvider(ganache_url))
 
 def register(request):
@@ -17,17 +17,17 @@ def register(request):
             wallet_address = account.address
             private_key = account._private_key.hex()
 
-            initial_balance = web3.to_wei(0, 'ether')
+            initial_balance = web3.to_wei(20, 'ether')
 
-            sender_address = '0x9F7294cB445CF6CFc06d14a6852466374A157908'
-            sender_private_key = '0x64055b009edc6d079393d06b40b357af80f91ad46c83020777d783ceeb191136'
+            sender_address = '0x083952e3Db609196b4040012e9266c23647fad1d'
+            sender_private_key = '0x65ed3184433b5d98484b0665e06a5a1cf1560c6d786b3d031329c70708a17321'
             nonce = web3.eth.get_transaction_count(sender_address)
             tx = {
                 'nonce': nonce,
                 'to': wallet_address,
                 'value': initial_balance,
                 'gas': 2000000,
-                'gasPrice': web3.to_wei('0', 'gwei')
+                'gasPrice': web3.to_wei('20', 'gwei')
             }
             signed_tx = web3.eth.account.sign_transaction(tx, sender_private_key)
             tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)

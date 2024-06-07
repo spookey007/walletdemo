@@ -23,7 +23,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'walletdemo.q7t9r5x2.com',
     'localhost',
-    '172.16.16.17'
+    '172.16.16.19',
+    '172.17.0.9'
+    '127.0.0.1'
 ]
 
 
