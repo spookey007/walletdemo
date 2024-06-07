@@ -19,8 +19,8 @@ def register(request):
 
             initial_balance = web3.to_wei(20, 'ether')
 
-            sender_address = '0x083952e3Db609196b4040012e9266c23647fad1d'
-            sender_private_key = '0x65ed3184433b5d98484b0665e06a5a1cf1560c6d786b3d031329c70708a17321'
+            sender_address = '0xd080193AeA8266bAFF3b955A24d9eF84E21b30AB '
+            sender_private_key = '0x2a04d9632c9cbf44627c9aad936f54e81af5f85ccb93c029d44ad5f4f101ae1b'
             nonce = web3.eth.get_transaction_count(sender_address)
             tx = {
                 'nonce': nonce,
