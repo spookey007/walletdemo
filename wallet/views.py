@@ -17,17 +17,17 @@ def register(request):
             wallet_address = account.address
             private_key = account._private_key.hex()
 
-            initial_balance = web3.to_wei(10000, 'ether')
+            initial_balance = web3.to_wei(100, 'ether')
 
-            sender_address = '0xd080193AeA8266bAFF3b955A24d9eF84E21b30AB'
-            sender_private_key = '0x2a04d9632c9cbf44627c9aad936f54e81af5f85ccb93c029d44ad5f4f101ae1b'
+            sender_address = '0xd5cE4DB109f199169FbA76047467619C1D0083E4 '
+            sender_private_key = '0x47638c4e937be5d4ab1982908407ce4cedf7e3c5d7ec485e5cdb20a7a5e1dfc3'
             nonce = web3.eth.get_transaction_count(sender_address)
             tx = {
                 'nonce': nonce,
                 'to': wallet_address,
                 'value': initial_balance,
                 'gas': 2000000,
-                'gasPrice': web3.to_wei('10', 'gwei')
+                'gasPrice': web3.to_wei('1', 'gwei')
             }
             signed_tx = web3.eth.account.sign_transaction(tx, sender_private_key)
             tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
@@ -67,7 +67,7 @@ def home(request):
             'to': to_address,
             'value': web3.to_wei(amount, 'ether'),
             'gas': 2000000,
-            'gasPrice': web3.to_wei('10', 'gwei')
+            'gasPrice': web3.to_wei('1', 'gwei')
         }
         signed_tx = web3.eth.account.sign_transaction(tx, private_key)
         tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
