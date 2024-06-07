@@ -20,7 +20,11 @@ SECRET_KEY = 'django-insecure-9%jua&i=7678$dh7^4upn9bz!o)da)4(_b@=x!y$46utm!-5p4
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'walletdemo.q7t9r5x2.com',
+    'localhost'
+]
+
 
 AUTH_USER_MODEL = 'wallet.User'
 
