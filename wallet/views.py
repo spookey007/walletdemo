@@ -17,7 +17,7 @@ def register(request):
             wallet_address = account.address
             private_key = account._private_key.hex()
 
-            initial_balance = web3.to_wei(100, 'ether')
+            initial_balance = web3.to_wei(90, 'ether')
 
             sender_address = '0xe52a44212704FaC1E075B02906F764d3B2f508C2'
             sender_private_key = '0x280ee948998340a894503158ced1acfddc79f41c626776be89dcf4055d72f72a'
