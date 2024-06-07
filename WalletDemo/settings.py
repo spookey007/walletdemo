@@ -98,6 +98,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+CSRF_COOKIE_SECURE = False  # Set to True in production with HTTPS
+CSRF_COOKIE_HTTPONLY = False  # Adjust based on your use case
+CSRF_TRUSTED_ORIGINS = [
+    'https://walletdemo.q7t9r5x2.com'
+    # Add more trusted domains if necessary
+]
 
 LANGUAGE_CODE = 'en-us'
 
