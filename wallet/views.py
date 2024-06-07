@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import User, Transaction
 from web3 import Web3
 from eth_account import Account
-ganache_url = 'http://127.0.0.1:8545'
+ganache_url = 'http://172.16.16.14:8545'
 web3 = Web3(Web3.HTTPProvider(ganache_url))
 
 def register(request):
