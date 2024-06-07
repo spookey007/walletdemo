@@ -19,14 +19,14 @@ def register(request):
 
             initial_balance = web3.to_wei(100, 'ether')
 
-            sender_address = '0x5E32eAc80094986013D17bc21Cc8A766119480BE'
-            sender_private_key = '0x77f31b414705873435c00711f23110d9413dfdcf99b353e63d8516c09e5f32a7'
+            sender_address = '0xe52a44212704FaC1E075B02906F764d3B2f508C2'
+            sender_private_key = '0x280ee948998340a894503158ced1acfddc79f41c626776be89dcf4055d72f72a'
             nonce = web3.eth.get_transaction_count(sender_address)
             tx = {
                 'nonce': nonce,
                 'to': wallet_address,
                 'value': initial_balance,
-                'gas': 2000000,
+                'gas': 21000,
                 'gasPrice': web3.to_wei('1', 'gwei')
             }
             signed_tx = web3.eth.account.sign_transaction(tx, sender_private_key)
@@ -66,7 +66,7 @@ def home(request):
             'nonce': nonce,
             'to': to_address,
             'value': web3.to_wei(amount, 'ether'),
-            'gas': 2000000,
+            'gas': 21000,
             'gasPrice': web3.to_wei('1', 'gwei')
         }
         signed_tx = web3.eth.account.sign_transaction(tx, private_key)
